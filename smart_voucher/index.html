@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART VOUCHER | Aplikasi Kasir</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <a href="../index.html">← Kembali ke LKPD</a>
+        <p class="eyebrow">TEACHING FACTORY · MINI ISP SEKOLAH</p>
+        <h1>SMART <span>VOUCHER</span></h1>
+        <p>Sistem Kasir Mini Penjualan Voucher Internet</p>
+        <small>HTML · CSS · JAVASCRIPT</small>
+      </header>
+      <div class="layout">
+        <section class="panel">
+          <p class="eyebrow">TRANSAKSI BARU</p>
+          <h2>Data Pembelian</h2>
+          <form id="voucherForm">
+            <div class="fields">
+              <label>Nama pelanggan<input id="customerName" value="Budi Santoso" required /></label>
+              <label>Kelas pelanggan<input id="customerClass" value="XI TKJ 1" required /></label>
+              <label>Kode transaksi<input id="transactionCode" value="SV-001" required /></label>
+              <label
+                >Jenis voucher<select id="voucherType">
+                  <option value="2000" data-name="Voucher 1 Jam">Voucher 1 Jam — Rp2.000</option>
+                  <option value="5000" data-name="Voucher 3 Jam">Voucher 3 Jam — Rp5.000</option>
+                  <option value="10000" data-name="Voucher 1 Hari" selected>Voucher 1 Hari — Rp10.000</option>
+                  <option value="25000" data-name="Voucher 7 Hari">Voucher 7 Hari — Rp25.000</option>
+                  <option value="75000" data-name="Voucher 30 Hari">Voucher 30 Hari — Rp75.000</option>
+                </select></label
+              >
+              <label>Jumlah voucher<input id="quantity" type="number" min="1" value="3" required /></label>
+              <label>Uang pembayaran (Rp)<input id="payment" type="number" min="0" value="50000" required /></label>
+            </div>
+            <div class="actions"><button class="primary" type="submit">Hitung Transaksi →</button><button class="reset" type="reset">Reset</button></div>
+          </form>
+          <div class="tests">
+            <b>Uji skenario LKPD</b>
+            <div><button type="button" id="testA">Kasus A</button><button type="button" id="testB">Kasus B</button><button type="button" id="testC">Kasus C</button><button type="button" id="testD">Kasus D</button></div>
+          </div>
+        </section>
+        <section class="panel receipt">
+          <div class="receipt-head">
+            <div>
+              <p class="eyebrow">RINGKASAN PEMBAYARAN</p>
+              <h2>Struk Transaksi</h2>
+            </div>
+            <span id="status">SIAP</span>
+          </div>
+          <div class="brand">
+            <b>SV</b>
+            <div><strong>SMART VOUCHER</strong><small>Mini ISP Sekolah</small></div>
+          </div>
+          <div class="rows">
+            <div><span>Nama pelanggan</span><strong id="outName">BUDI SANTOSO</strong></div>
+            <div><span>Kelas</span><strong id="outClass">XI TKJ 1</strong></div>
+            <div><span>Kode transaksi</span><strong id="outCode">SV-001</strong></div>
+            <div><span>Jenis voucher</span><strong id="outVoucher">Voucher 1 Hari</strong></div>
+            <div><span>Harga satuan</span><strong id="outPrice">Rp10.000</strong></div>
+            <div><span>Jumlah</span><strong id="outQty">3</strong></div>
+          </div>
+          <div class="totals">
+            <div><span>Subtotal</span><strong id="outSubtotal">Rp30.000</strong></div>
+            <div><span>Diskon (5%)</span><strong id="outDiscount">− Rp1.500</strong></div>
+            <div><span>Biaya administrasi</span><strong id="outAdmin">Rp1.000</strong></div>
+            <div class="grand"><span>Total pembayaran</span><strong id="outTotal">Rp29.500</strong></div>
+            <div><span>Uang dibayarkan</span><strong id="outPayment">Rp50.000</strong></div>
+            <div class="change"><span>Uang kembalian</span><strong id="outChange">Rp20.500</strong></div>
+          </div>
+          <p id="note" class="note">Transaksi berhasil dihitung. Terima kasih!</p>
+        </section>
+      </div>
+      <section class="panel console">
+        <p class="eyebrow">OUTPUT JAVASCRIPT</p>
+        <h2>Data untuk Console</h2>
+        <p>Buka Developer Tools dengan F12, pilih tab Console untuk melihat rincian hasil perhitungan.</p>
+        <pre id="consolePreview">SMART VOUCHER siap digunakan. Klik Hitung Transaksi untuk mencatat hasil ke Console.</pre>
+      </section>
+      <footer>SMART VOUCHER · APLIKASI PROYEK JAVASCRIPT · <a href="../index.html">Buka LKPD</a></footer>
+    </main>
+  </body>
+</html>

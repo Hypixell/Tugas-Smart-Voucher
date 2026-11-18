@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Proyek JavaScript SMART VOUCHER — Sistem Kasir Mini ISP Sekolah" />
+    <title>SMART VOUCHER — Proyek JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero" id="top">
+        <div class="hero-kicker">PROYEK / TANTANGAN JAVASCRIPT</div>
+        <h1>SMART VOUCHER</h1>
+        <p class="hero-subtitle">Membangun Sistem Kasir Mini ISP Sekolah</p>
+        <div class="hero-meta"><span>⏱ 135 menit</span><span>HTML · CSS · JavaScript</span><span>Teaching Factory (TeFa) TKJ</span></div>
+        <a class="app-launch-button" href="smart_voucher/index.html">Buka Aplikasi SMART VOUCHER ↗</a>
+      </header>
+
+      <div class="identity-header">
+        <div class="identity-row"><span class="identity-label">Nama</span><span class="identity-value">: Al-Kindi Shiddiq Jaguardi</span></div>
+        <div class="identity-row"><span class="identity-label">Kelas</span><span class="identity-value">: X-PPLG 1</span></div>
+        <div class="identity-row"><span class="identity-label">Tanggal</span><span class="identity-value">: 18-11-2026</span></div>
+      </div>
+
+      <section class="box" id="bagian-1">
+        <div class="box-title">1. GAMBARAN PROYEK</div>
+        <div class="box-content">
+          <p>
+            Kamu berperan sebagai junior programmer di Teaching Factory (TeFa) bidang TKJ. Unit Mini ISP sekolah menjual voucher internet kepada warga sekolah. Petugas masih menghitung subtotal, diskon, biaya administrasi, total pembayaran,
+            dan uang kembalian secara manual.
+          </p>
+          <p>Tugasmu adalah membuat prototipe aplikasi kasir sederhana bernama <strong>SMART VOUCHER</strong> menggunakan HTML, CSS, dan JavaScript.</p>
+          <h3>Target Pembelajaran</h3>
+          <p>
+            Proyek ini menguji pemahaman JavaScript sampai materi operasi string dan aritmatika: JavaScript internal dan eksternal, variabel, tipe data, input-output, <code>console.log()</code>, <code>typeof</code>, manipulasi string,
+            penggabungan string, dan operator aritmatika.
+          </p>
+          <h3>Batasan Materi</h3>
+          <div class="notice">
+            <strong>Perhatian:</strong> Jangan gunakan percabangan (if/else), perulangan (for/while), atau fungsi buatan sendiri pada proyek utama. Fokuskan solusi pada materi yang telah dipelajari. Jika ada fitur yang belum pernah
+            diajarkan, konsultasikan kepada guru sebelum digunakan.
+          </div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-2">
+        <div class="box-title">2. DATA PRODUK VOUCHER</div>
+        <div class="box-content">
+          <p>Gunakan daftar produk dan harga berikut sebagai data voucher pada aplikasi.</p>
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Jenis Voucher</th>
+                  <th>Harga</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Voucher 1 Jam</td>
+                  <td>Rp2.000</td>
+                </tr>
+                <tr>
+                  <td>Voucher 3 Jam</td>
+                  <td>Rp5.000</td>
+                </tr>
+                <tr>
+                  <td>Voucher 1 Hari</td>
+                  <td>Rp10.000</td>
+                </tr>
+                <tr>
+                  <td>Voucher 7 Hari</td>
+                  <td>Rp25.000</td>
+                </tr>
+                <tr>
+                  <td>Voucher 30 Hari</td>
+                  <td>Rp75.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-3">
+        <div class="box-title">3. DATA TRANSAKSI YANG HARUS DIOLAH</div>
+        <div class="box-content">
+          <p>Aplikasi menerima atau menggunakan data berikut:</p>
+          <ul>
+            <li>Nama pelanggan</li>
+            <li>Kelas pelanggan</li>
+            <li>Kode transaksi</li>
+            <li>Jenis voucher</li>
+            <li>Harga voucher</li>
+            <li>Jumlah voucher yang dibeli</li>
+            <li>Uang pembayaran</li>
+          </ul>
+          <p>Data dapat dimasukkan melalui <code>prompt()</code> atau form HTML sesuai arahan guru.</p>
+          <h3>Ketentuan Perhitungan</h3>
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Komponen</th>
+                  <th>Rumus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Subtotal</td>
+                  <td>Harga voucher × jumlah pembelian</td>
+                </tr>
+                <tr>
+                  <td>Diskon</td>
+                  <td>5% × subtotal</td>
+                </tr>
+                <tr>
+                  <td>Biaya administrasi</td>
+                  <td>Rp1.000</td>
+                </tr>
+                <tr>
+                  <td>Total pembayaran</td>
+                  <td>Subtotal − diskon + biaya administrasi</td>
+                </tr>
+                <tr>
+                  <td>Uang kembalian</td>
+                  <td>Uang pembayaran − total pembayaran</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice"><strong>Catatan penting:</strong> Semua hasil perhitungan harus berasal dari proses JavaScript. Jangan mengetik angka hasil akhir secara manual ke dalam HTML.</div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-4">
+        <div class="box-title">4. FITUR WAJIB APLIKASI</div>
+        <div class="box-content">
+          <h3>A. Identitas Transaksi</h3>
+          <p>Buat variabel untuk menyimpan nama pelanggan, kelas pelanggan, dan kode transaksi. Tanggal transaksi boleh ditambahkan jika materi Date sudah diperkenalkan.</p>
+          <h3>B. Manipulasi String</h3>
+          <p>Terapkan sekurang-kurangnya empat operasi berikut:</p>
+          <ul>
+            <li><code>toUpperCase()</code> untuk menampilkan nama pelanggan dengan huruf kapital.</li>
+            <li><code>toLowerCase()</code> untuk mengubah teks jenis voucher menjadi huruf kecil.</li>
+            <li><code>trim()</code> untuk membersihkan spasi di awal dan akhir nama.</li>
+            <li><code>length</code> untuk menghitung jumlah karakter nama.</li>
+            <li>Penggabungan string untuk membuat kode atau informasi transaksi.</li>
+          </ul>
+          <h3>C. Perhitungan Transaksi</h3>
+          <p>Gunakan operator penjumlahan (+), pengurangan (-), perkalian (*), dan pembagian (/) atau operasi persentase yang sesuai.</p>
+          <p>Perhatikan perbedaan operator + ketika digunakan pada string dan number.</p>
+          <h3>D. Output Transaksi</h3>
+          <p>Tampilkan informasi transaksi menggunakan <code>console.log()</code>, <code>alert()</code> atau elemen HTML. Gunakan template literal atau penggabungan string untuk menyusun struk.</p>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-5">
+        <div class="box-title">5. GAMBARAN HASIL YANG DIHARAPKAN</div>
+        <div class="box-content">
+          <p>Berikut contoh hasil transaksi yang menjadi acuan pengujian.</p>
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Detail Transaksi</th>
+                  <th>Nilai Contoh</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nama pelanggan</td>
+                  <td>BUDI SANTOSO</td>
+                </tr>
+                <tr>
+                  <td>Kelas</td>
+                  <td>XI TKJ 1</td>
+                </tr>
+                <tr>
+                  <td>Kode transaksi</td>
+                  <td>SV-001</td>
+                </tr>
+                <tr>
+                  <td>Voucher</td>
+                  <td>1 Hari</td>
+                </tr>
+                <tr>
+                  <td>Harga voucher</td>
+                  <td>Rp10.000</td>
+                </tr>
+                <tr>
+                  <td>Jumlah</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td>Rp30.000</td>
+                </tr>
+                <tr>
+                  <td>Diskon 5%</td>
+                  <td>Rp1.500</td>
+                </tr>
+                <tr>
+                  <td>Biaya administrasi</td>
+                  <td>Rp1.000</td>
+                </tr>
+                <tr>
+                  <td>Total pembayaran</td>
+                  <td>Rp29.500</td>
+                </tr>
+                <tr>
+                  <td>Uang pembayaran</td>
+                  <td>Rp50.000</td>
+                </tr>
+                <tr>
+                  <td>Uang kembalian</td>
+                  <td>Rp20.500</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice">Angka di atas merupakan contoh hasil perhitungan. Program harus menghitungnya secara otomatis berdasarkan data transaksi.</div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-6">
+        <div class="box-title">6. STRUKTUR FOLDER PROYEK</div>
+        <div class="box-content">
+          <p>Susun file proyek dengan struktur berikut:</p>
+          <pre class="code-block"><code>smart-voucher/
+├── index.html
+├── style.css
+└── script.js</code></pre>
+          <h3>Ketentuan Pengerjaan</h3>
+          <ol>
+            <li>Kerjakan secara individu.</li>
+            <li>Pisahkan HTML, CSS, dan JavaScript ke dalam file masing-masing.</li>
+            <li>Hubungkan script.js ke index.html dengan benar.</li>
+            <li>Gunakan nama variabel yang jelas dan konsisten.</li>
+            <li>Perhitungan wajib dilakukan menggunakan JavaScript.</li>
+            <li>Jangan menyalin kode teman.</li>
+            <li>Siapkan diri untuk menjelaskan kode yang dibuat.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-7">
+        <div class="box-title">7. TANTANGAN TEKNIS</div>
+        <div class="box-content">
+          <p>Selesaikan seluruh tantangan berikut untuk memastikan kompetensi inti telah diterapkan.</p>
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tantangan</th>
+                  <th>Kompetensi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Nama yang dimasukkan dengan huruf kecil ditampilkan dalam huruf kapital.</td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Bersihkan spasi di awal dan akhir nama pelanggan.</td>
+                  <td>trim()</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Tampilkan jumlah karakter nama pelanggan.</td>
+                  <td>length</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Buat kode transaksi dari gabungan beberapa variabel.</td>
+                  <td>Concatenation</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Hitung subtotal berdasarkan harga dan jumlah.</td>
+                  <td>Perkalian</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Hitung diskon sebesar 5%.</td>
+                  <td>Aritmatika</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Hitung total pembayaran.</td>
+                  <td>Aritmatika</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Hitung uang kembalian.</td>
+                  <td>Pengurangan</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Tampilkan tipe data harga, jumlah, dan nama.</td>
+                  <td>typeof</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Tampilkan laporan transaksi lengkap di console.</td>
+                  <td>Output</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-8">
+        <div class="box-title">8. SKENARIO PENGUJIAN</div>
+        <div class="box-content">
+          <p>Uji program menggunakan seluruh data berikut. Setiap kasus menggunakan diskon 5% dan biaya administrasi Rp1.000.</p>
+          <h3>Data Pengujian</h3>
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Kasus</th>
+                  <th>Harga Voucher</th>
+                  <th>Jumlah</th>
+                  <th>Pembayaran</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A</td>
+                  <td>Rp2.000</td>
+                  <td>5</td>
+                  <td>Rp20.000</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>Rp10.000</td>
+                  <td>3</td>
+                  <td>Rp50.000</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>Rp25.000</td>
+                  <td>2</td>
+                  <td>Rp60.000</td>
+                </tr>
+                <tr>
+                  <td>D</td>
+                  <td>Rp75.000</td>
+                  <td>1</td>
+                  <td>Rp100.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Catat Hasil Pengujian</h3>
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Kasus</th>
+                  <th>Subtotal</th>
+                  <th>Diskon</th>
+                  <th>Total</th>
+                  <th>Kembalian</th>
+                  <th>Lulus?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A</td>
+                  <td>Rp10.000</td>
+                  <td>Rp500</td>
+                  <td>Rp10.500</td>
+                  <td>Rp9.500</td>
+                  <td>Lulus</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>Rp30.000</td>
+                  <td>Rp1.500</td>
+                  <td>Rp29.500</td>
+                  <td>Rp20.500</td>
+                  <td>Lulus</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>Rp50.000</td>
+                  <td>Rp2.500</td>
+                  <td>Rp48.500</td>
+                  <td>Rp11.500</td>
+                  <td>Lulus</td>
+                </tr>
+                <tr>
+                  <td>D</td>
+                  <td>Rp75.000</td>
+                  <td>Rp3.750</td>
+                  <td>Rp72.250</td>
+                  <td>Rp27.750</td>
+                  <td>Lulus</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Bukti yang harus disiapkan</h3>
+          <ul>
+            <li>Screenshot tampilan aplikasi.</li>
+            <li>Screenshot hasil perhitungan di console.</li>
+            <li>Screenshot pengujian empat kasus.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-9">
+        <div class="box-title">9. RUBRIK PENILAIAN</div>
+        <div class="box-content">
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Aspek</th>
+                  <th>Indikator</th>
+                  <th>Bobot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Variabel dan tipe data</td>
+                  <td>Deklarasi dan penggunaan variabel benar.</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>Operasi string</td>
+                  <td>Manipulasi dan penggabungan string benar.</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>Operasi aritmatika</td>
+                  <td>Rumus perhitungan benar.</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>Input dan output</td>
+                  <td>Data diterima dan hasil ditampilkan.</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>Struktur program</td>
+                  <td>HTML, CSS, dan JS terpisah serta terhubung.</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>Ketepatan hasil</td>
+                  <td>Lulus seluruh skenario pengujian.</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>Pemahaman kode</td>
+                  <td>Mampu menjelaskan kode sendiri.</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <th>TOTAL</th>
+                  <th></th>
+                  <th>100</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-10">
+        <div class="box-title">10. PERTANYAAN REFLEKSI DAN WAWANCARA</div>
+        <div class="box-content">
+          <div class="notice">Jawablah dengan bahasamu sendiri. Guru dapat meminta siswa menjelaskan atau menunjukkan bagian kode yang mendukung jawaban.</div>
+          <div class="question">
+            <label for="q1">1. Mengapa harga voucher sebaiknya menggunakan tipe data number, bukan string?</label>
+            <div class="answer-filled">Karena harga voucher digunakan dalam operasi matematika seperti perkalian, pengurangan, dan perhitungan diskon. Tipe Number dapat dihitung secara langsung, sedangkan String merupakan teks.</div>
+          </div>
+          <div class="question">
+            <label for="q2">2. Apa perbedaan let, const, dan var?</label>
+            <div class="answer-filled">
+              let memiliki cakupan blok dan nilainya dapat diubah. const juga memiliki cakupan blok tetapi tidak dapat diberi nilai ulang. var memiliki cakupan fungsi dan dapat dideklarasikan ulang, sehingga penggunaannya lebih mudah
+              menimbulkan kebingungan.
+            </div>
+          </div>
+          <div class="question">
+            <label for="q3">3. Apa yang terjadi jika hasil prompt() langsung dikalikan tanpa konversi tipe data?</label>
+            <div class="answer-filled">
+              Operator perkalian (*) akan mengubah nilai numerik berbentuk String menjadi angka secara otomatis pada operasi matematika. Namun, sebaiknya input dari prompt() tetap dikonversi dengan Number() agar tipe data jelas dan
+              konsisten.
+            </div>
+          </div>
+          <div class="question">
+            <label for="q4">4. Mengapa trim() berguna untuk mengolah nama pelanggan?</label>
+            <div class="answer-filled">trim() menghapus spasi di awal dan akhir teks nama sehingga nama lebih bersih, mudah dibandingkan, dan jumlah karakter dengan length menjadi lebih akurat.</div>
+          </div>
+          <div class="question">
+            <label for="q5">5. Apa perbedaan toUpperCase() dan toLowerCase()?</label>
+            <div class="answer-filled">toUpperCase() mengubah seluruh huruf menjadi kapital, sedangkan toLowerCase() mengubah seluruh huruf menjadi huruf kecil.</div>
+          </div>
+          <div class="question">
+            <label for="q6">6. Bagaimana menghitung diskon 5% menggunakan JavaScript?</label>
+            <div class="answer-filled">Diskon dihitung dengan rumus subtotal * 5 / 100. Contoh: 30.000 * 5 / 100 = 1.500.</div>
+          </div>
+          <div class="question">
+            <label for="q7">7. Apa perbedaan operator + untuk string dan number?</label>
+            <div class="answer-filled">Jika digunakan pada String, operator + menggabungkan teks, misalnya "10" + "20" menghasilkan "1020". Jika digunakan pada Number, operator + menjumlahkan angka, misalnya 10 + 20 menghasilkan 30.</div>
+          </div>
+          <div class="question">
+            <label for="q8">8. Mengapa kode JavaScript sebaiknya dipisahkan ke file eksternal?</label>
+            <div class="answer-filled">File eksternal membuat kode HTML, CSS, dan JavaScript lebih terpisah dan terorganisasi, lebih mudah dirawat, serta dapat digunakan atau diperbarui tanpa memenuhi file HTML.</div>
+          </div>
+          <div class="question">
+            <label for="q9">9. Apa fungsi console.log() dalam proses debugging?</label>
+            <div class="answer-filled">console.log() menampilkan nilai variabel dan hasil proses di Console browser. Dengan begitu, programmer dapat memeriksa alur program dan menemukan kesalahan saat debugging.</div>
+          </div>
+          <div class="question">
+            <label for="q10">10. Jika jumlah voucher berubah dari 3 menjadi 10, bagian mana dari program yang harus berubah?</label>
+            <div class="answer-filled">
+              Nilai pada variabel jumlah pembelian yang digunakan dalam perhitungan harus diubah dari 3 menjadi 10. Rumus subtotal dan perhitungan berikutnya tetap sama karena hasilnya mengikuti nilai variabel tersebut.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-11">
+        <div class="box-title">11. MISI TAMBAHAN (LEVEL 2)</div>
+        <div class="box-content">
+          <p>Untuk siswa yang telah menyelesaikan fitur wajib:</p>
+          <ul>
+            <li>Buat kode transaksi yang menggabungkan inisial nama dan kelas.</li>
+            <li>Buat ringkasan transaksi menggunakan template literal.</li>
+            <li>Hitung rata-rata harga voucher dari beberapa data voucher yang disediakan guru.</li>
+            <li>Tampilkan jumlah karakter nama pelanggan setelah spasi di awal dan akhir dibersihkan.</li>
+            <li>Percantik struk menggunakan CSS.</li>
+          </ul>
+          <div class="notice">Fitur tambahan tetap tidak boleh menggunakan percabangan, perulangan, atau fungsi buatan sendiri.</div>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-12">
+        <div class="box-title">12. CHECKLIST PENGUMPULAN</div>
+        <div class="box-content">
+          <p>Centang setiap item setelah selesai disiapkan.</p>
+          <div class="checklist">
+            <label><input type="checkbox" checked disabled /> Folder proyek smart-voucher.</label>
+            <label><input type="checkbox" checked disabled /> File index.html, style.css, dan script.js.</label>
+            <label><input type="checkbox" checked disabled /> Screenshot tampilan aplikasi.</label>
+            <label><input type="checkbox" checked disabled /> Screenshot hasil perhitungan di console.</label>
+            <label><input type="checkbox" checked disabled /> Screenshot empat skenario pengujian.</label>
+            <label><input type="checkbox" checked disabled /> Penjelasan minimal lima bagian kode yang dianggap paling penting.</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="box" id="panduan-screenshot">
+        <div class="box-title">ScreenShot</div>
+        <div class="box-content">
+          <ol>
+            <li><strong>halaman aplikasi yang menampilkan form pembelian dan struk.</strong></li>
+            <img src="gambar/01-tampilan-aplikasi.png" alt="Tampilan Console Variable" />
+            <li><strong>Console Log</strong></li>
+            <img src="gambar/02-tampilan-aplikasi.png" alt="Tampilan Console Variable" />
+            <li><strong>klik Kasus A dan screenshot hasil struk.</strong></li>
+            <img src="gambar/03-tampilan-aplikasi.png" alt="Tampilan Console Variable" />
+            <li><strong>klik Kasus B dan screenshot hasil struk.</strong></li>
+            <img src="gambar/04-tampilan-aplikasi.png" alt="Tampilan Console Variable" />
+            <li><strong>klik Kasus C dan screenshot hasil struk.</strong></li>
+            <img src="gambar/05-tampilan-aplikasi.png" alt="Tampilan Console Variable" />
+            <li><strong>Kasus D dan screenshot hasil struk.</strong></li>
+            <img src="gambar/06-tampilan-aplikasi.png" alt="Tampilan Console Variable" />
+          </ol>
+        </div>
+      </section>
+
+      <section class="box" id="bagian-13">
+        <div class="box-title">13. ALOKASI WAKTU</div>
+        <div class="box-content">
+          <div class="table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Kegiatan</th>
+                  <th>Waktu</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Memahami studi kasus</td>
+                  <td>15 menit</td>
+                </tr>
+                <tr>
+                  <td>Merancang variabel dan algoritma</td>
+                  <td>15 menit</td>
+                </tr>
+                <tr>
+                  <td>Membuat program</td>
+                  <td>60 menit</td>
+                </tr>
+                <tr>
+                  <td>Pengujian dan debugging</td>
+                  <td>25 menit</td>
+                </tr>
+                <tr>
+                  <td>Presentasi dan wawancara</td>
+                  <td>20 menit</td>
+                </tr>
+                <tr>
+                  <th>TOTAL</th>
+                  <th>135 menit</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing box">
+        <div class="box-title">PESAN UNTUK PROGRAMMER</div>
+        <div class="box-content">
+          <blockquote>
+            “Program yang baik bukan hanya program yang terlihat menarik, tetapi program yang menghasilkan perhitungan benar, mengolah data dengan tepat, dan dapat dijelaskan oleh pembuatnya. Pastikan kamu memahami setiap baris kode yang
+            kamu tulis.”
+          </blockquote>
+          <p class="closing-line">Selamat berkarya dan jadilah programmer yang teliti!</p>
+        </div>
+      </section>
+      <footer>SMART VOUCHER <span>|</span> PROYEK JAVASCRIPT</footer>
+    </div>
+    <button class="back-top" id="backTop" type="button" aria-label="Kembali ke atas">↑</button>
+  </body>
+</html>
